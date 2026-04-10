@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>AI Trends & Cursor AI Agent - Kỷ nguyên Lập trình Mới</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Modern Premium Aesthetics */
+        body {
+            background: linear-gradient(-45deg, #f0f4f8, #ffffff, #e2e8f0, #f8fafc);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .reveal .slides {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            color: #334155;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif !important;
+            text-transform: none !important;
+            letter-spacing: -0.02em !important;
+        }
+
+        h1 {
+            font-size: 5.5rem !important;
+            font-weight: 900 !important;
+            background: linear-gradient(135deg, #f26d21 0%, #ff8c4a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px !important;
+        }
+
+        h2 {
+            font-size: 4.5rem !important;
+            font-weight: 700 !important;
+            background: linear-gradient(135deg, #124898 0%, #2067d6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glass-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.12);
+            border-color: rgba(255, 255, 255, 1);
+        }
+
+        /* Lists */
+        .reveal ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reveal ul li {
+            position: relative;
+            padding-left: 55px;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            line-height: 1.5;
+            text-align: left;
+            transition: all 0.3s ease;
+            color: #334155;
+        }
+
+        .reveal ul li i {
+            position: absolute;
+            left: 0;
+            top: 6px;
+            color: #f26d21;
+            font-size: 2rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .reveal ul li:hover {
+            color: #0f172a;
+            transform: translateX(10px);
+        }
+
+        .reveal ul li:hover i {
+            transform: scale(1.2);
+            color: #124898;
+            text-shadow: 0 0 10px rgba(18, 72, 152, 0.2);
+        }
+
+        /* Comparison Grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .grid-card {
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+        }
+
+        .grid-card.old {
+            background: linear-gradient(145deg, rgba(239, 68, 68, 0.05), rgba(255,255,255,0.9));
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        .grid-card.new {
+            background: linear-gradient(145deg, rgba(75, 170, 69, 0.1), rgba(255,255,255,0.9));
+            border: 1px solid rgba(75, 170, 69, 0.3);
+        }
+
+        .grid-card h3 {
+            font-size: 3.2rem !important;
+            margin-bottom: 20px !important;
+            text-align: center;
+        }
+
+        .old h3 { background: linear-gradient(to right, #ef4444, #f87171); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        .new h3 { background: linear-gradient(to right, #4baa45, #7dd37b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+
+        /* Highlights */
+        .hl-green { color: #4baa45; font-weight: 600; }
+        .hl-blue { color: #124898; font-weight: 600; }
+        .hl-purple { color: #f26d21; font-weight: 600; }
+        .hl-cursor {
+            background: linear-gradient(to right, #124898, #f26d21);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* Stats / Numbers highlights */
+        .stat-box {
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+        }
+        .stat-number {
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(120deg, #f26d21 0%, #124898 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+        .stat-text {
+            font-size: 2rem;
+            color: #64748b;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .badge.ai { 
+            background: rgba(242, 109, 33, 0.1); 
+            border: 1px solid rgba(242, 109, 33, 0.3); 
+            color: #f26d21;
+        }
+
+        /* Subtitles & Text */
+        .reveal p {
+            line-height: 1.6;
+            color: #475569;
+            font-weight: 400;
+            font-size: 2.2rem;
+        }
+
+        /* Custom subtle grid background element overlay */
+        .grid-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-overlay"></div>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: BÌA -->
+            <section class="glass-card">
+                <div class="badge ai">Software Development 2.0</div>
+                <h1>Kỷ Nguyên AI<br>Trong Lập Trình Web</h1>
+                <p style="font-size: 2.4rem; font-weight: 500; margin-top: 20px;">Sự chuyển dịch từ "Manual Coding" sang "Agentic Workflow"<br><span class="hl-blue">Thời lượng: 30 Giới thiệu</span> + <span class="hl-cursor">Cursor AI Agent</span></p>
+                <div style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                    <p style="font-size: 1.8rem; color: #94a3b8;"><i class="fa-solid fa-microphone"></i> Trình bày: Thầy Nguyễn Quang Hưng & Nguyễn Hữu Huy • <i class="fa-regular fa-calendar"></i> Năm 2026</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: NỘI DUNG -->
+            <section>
+                <h2>Nội Dung Chính</h2>
+                <div class="glass-card" style="margin-top: 30px;">
+                    <ul>
+                        <li><i class="fa-solid fa-earth-americas"></i> <b>Phần 1:</b> Toàn cảnh AI trong ngành phần mềm (5 phút)</li>
+                        <li><i class="fa-solid fa-code"></i> <b>Phần 2:</b> AI thay đổi phát triển Web như thế nào? (5 phút)</li>
+                        <li><i class="fa-solid fa-code-compare"></i> <b>Phần 3:</b> Làm Web: Ngày Xưa vs. Ngày Nay (10 phút)</li>
+                        <li><i class="fa-solid fa-bolt"></i> <b>Phần 4:</b> Trình diễn sức mạnh làm Web tự động (10 phút)</li>
+                        <li><i class="fa-solid fa-robot" style="color: #f59e0b;"></i> <b>Special:</b> Giới thiệu & Demo Cursor AI Agent</li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <!-- PHẦN 1: TỔNG QUAN -->
+            <section>
+                <section>
+                    <div class="badge ai">Phần 1</div>
+                    <h2>Làn sóng AI trong Phần Mềm</h2>
+                    <p>AI không còn là "plugin" hỗ trợ, nó trở thành <span class="hl-blue">Thành phần Cốt lõi</span> (Core Engine) trong quy trình SDLC (Software Development Life Cycle).</p>
+                    
+                    <div style="display: flex; justify-content: space-around; margin-top: 40px;">
+                        <div class="stat-box">
+                            <span class="stat-number">~92%</span>
+                            <span class="stat-text">Lập trình viên đang dùng AI<br>(GitHub Survey)</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">55%</span>
+                            <span class="stat-text">Tốc độ code tăng lên<br>với Copilot</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="glass-card">
+                    <h3>AI tham gia vào đâu?</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">Phân tích yêu cầu:</span> AI tổng hợp tài liệu, vẽ UML, lên plan (ChatGPT, Claude).</li>
+                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">Code Generation:</span> Sinh boilerplate code, pattern MVC, Microservices.</li>
+                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">Automated Testing:</span> Tự viết Unit Test, End-to-End Test, phát hiện bug trước khi chạy.</li>
+                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">Deploy & DevOps:</span> Tự sinh Dockerfile, CI/CD pipeline, giải thích log server.</li>
+                    </ul>
+                </section>
+            </section>
+
+
+            <!-- PHẦN 2: NGÀNH WEB -->
+            <section>
+                <section>
+                    <div class="badge ai">Phần 2</div>
+                    <h2>Tác động riêng biệt vào ngành Web</h2>
+                    <p>Làm web hiện đại không chỉ là HTML/CSS đơn thuần nữa. Ai đã tăng tốc chóng mặt vòng đời sản phẩm Web ra thị trường (Time-to-Market).</p>
+                </section>
+
+                <section class="glass-card">
+                    <h3>Sự thay đổi trong Web Development</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-wand-magic-sparkles"></i> <b>Design to Code (UI/UX)</b>: Các công cụ như Vercel v0, v0.dev, Relume sinh toàn bộ React/Tailwind code từ Prompt text chỉ trong vài giây.</li>
+                        <li><i class="fa-solid fa-database"></i> <b>Backend/API</b>: Khởi tạo database schema, GraphQL/REST endpoint, Setup ORM (Prisma/Drizzle) tự động hoàn toàn.</li>
+                        <li><i class="fa-solid fa-magnifying-glass"></i> <b>SEO & Content</b>: AI tự động sinh thẻ meta, cấu trúc Semantic HTML, tạo Article chuẩn SEO ngay lúc build.</li>
+                        <li><i class="fa-solid fa-universal-access"></i> <b>Accessibility (a11y) & Theo dõi lõi</b>: Tự thêm ARIA tags, phân tích Lighthouse realtime.</li>
+                    </ul>
+                </section>
+            </section>
+
+
+            <!-- PHẦN 3: XƯA VÀ NAY -->
+            <section>
+                <section>
+                    <div class="badge ai">Phần 3</div>
+                    <h2>Làm Web: Xưa vs. Nay</h2>
+                    <p>Khác biệt cốt lõi nhất nằm ở <span class="hl-purple">Tư duy giải quyết vấn đề</span>.</p>
+                </section>
+
+                <section>
+                    <div class="grid-2">
+                        <div class="grid-card old glass-card" style="backdrop-filter: blur(5px);">
+                            <h3><i class="fa-solid fa-hourglass-half"></i> Làm Web Ngày Xưa (Cách đây 2-3 năm)</h3>
+                            <ul>
+                                <li><i class="fa-solid fa-xmark"></i> <b>Viết từng dòng:</b> Gõ tay thẻ div, class, setup Webpack mệt mỏi.</li>
+                                <li><i class="fa-solid fa-xmark"></i> <b>Tìm lỗi (Debug):</b> <code>console.log()</code> khắp nơi. Bí quá thì lên StackOverflow hỏi, đợi phản hồi.</li>
+                                <li><i class="fa-solid fa-xmark"></i> <b>Boilerplate:</b> Mất vài ngày ròng rã chỉ để setup Redux, Router, Auth.</li>
+                                <li><i class="fa-solid fa-xmark"></i> <b>Tập trung vào Cú pháp:</b> Phải nhớ syntax ngôn ngữ, API docs.</li>
+                            </ul>
+                        </div>
+                        <div class="grid-card new glass-card" style="backdrop-filter: blur(5px);">
+                            <h3><i class="fa-solid fa-rocket"></i> Làm Web Ngày Nay (Với AI)</h3>
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> <b>Generation first:</b> Chạy 1 câu Prompt, AI sinh sẵn layout component React.</li>
+                                <li><i class="fa-solid fa-check"></i> <b>Smart Debugging:</b> Copy báo lỗi ném cho AI, hoặc click "Fix with AI". Nhận giải pháp ngay tại IDE.</li>
+                                <li><i class="fa-solid fa-check"></i> <b>Boilerplate:</b> Setup dự án fullstack trong 5 phút với lệnh prompt.</li>
+                                <li><i class="fa-solid fa-check"></i> <b>Tập trung vào Logic:</b> "Prompt Engineering" và System Architecture quan trọng hơn việc nhớ Syntax.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="glass-card">
+                    <h3>Vai trò của Web Developer đang tiến hóa</h3>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <h4 style="color: #94a3b8; font-size: 1.5rem; text-decoration: line-through;">Từ "Người Thợ Code" (Typist)</h4>
+                        <br>
+                        <i class="fa-solid fa-arrow-down" style="font-size: 2rem; color: #38bdf8;"></i>
+                        <br><br>
+                        <h4 style="font-size: 2.2rem;" class="hl-purple">Thành "Kiến trúc sư hệ thống điều phối AI"</h4>
+                        <p style="margin-top: 20px;">Trách nhiệm bây giờ là <b>Đánh giá Code (Review)</b>, <b>Bảo mật (Security)</b>, và <b>Trải nghiệm người dùng (UX)</b>.</p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- CHUYỂN TIẾP -->
+            <section class="glass-card" style="text-align: center;">
+                <h2>Nhưng công cụ nào sẽ giúp ta đạt được điều này?</h2>
+                <p>ChatGPT và Copilot là tốt... nhưng vẫn bắt bạn phải copy-paste liên tục.</p>
+                <p>Đã đến lúc cần một IDE <span class="hl-cursor">"AI-Native"</span>.</p>
+            </section>
+
+
+            <!-- PHẦN 4: CURSOR AI AGENT -->
+            <section>
+                <section>
+                    <div class="badge" style="background: linear-gradient(to right, #4b5563, #1f2937); color: white;">Vũ khí của tương lai</div>
+                    <h1><span class="hl-cursor">Cursor</span> AI Editor</h1>
+                    <p>Biên tập mã nguồn (Code Editor) được xây dựng dành riêng cho Kỷ nguyên AI.</p>
+                </section>
+
+                <section class="glass-card">
+                    <h3>Cursor là gì?</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-code-branch"></i> <b>Fork từ VS Code:</b> Giữ nguyên 100% extension, theme, phím tắt của VS Code. Không mất thời gian học lại tool mới.</li>
+                        <li><i class="fa-solid fa-brain"></i> <b>Tích hợp AI sâu vào IDE:</b> Không phải là Extension cài thêm. AI là lõi của trình soạn thảo.</li>
+                        <li><i class="fa-solid fa-sitemap"></i> <b>Codebase Awareness:</b> AI hiểu toàn bộ dự án, mọi file, mọi function mà nó đang làm việc cùng!</li>
+                        <li><i class="fa-solid fa-bolt"></i> <b>Hỗ trợ đa mô hình:</b> Tích hợp Claude 3.5 Sonnet, GPT-4o, o1-preview. (Đặc biệt Claude 3.5 Sonnet đang là vua viết code).</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Tính năng sát thủ của Cursor</h2>
+                    <div class="grid-2" style="font-size: 1.1rem;">
+                        <div class="glass-card" style="padding: 20px;">
+                            <h4 style="color: #60a5fa;"><kbd>Cmd/Ctrl + K</kbd> (Inline Edit)</h4>
+                            <p>Bôi đen đoạn code, gõ yêu cầu thay đổi (ví dụ: <i>"thêm animation mờ dần"</i>). AI sẽ sinh ra một bảng Diff đỏ/xanh y hệt Git để bạn Accept/Reject ngay tại dòng đó. Không rành rẽ tab chat.</p>
+                        </div>
+                        <div class="glass-card" style="padding: 20px;">
+                            <h4 style="color: #60a5fa;"><kbd>Cmd/Ctrl + L</kbd> (Chat w/ Codebase)</h4>
+                            <p>Chat với AI, sử dụng <code>@Files</code>, <code>@Folders</code>, <code>@Codebase</code> hoặc thậm chí <code>@Web</code> để dẫn chứng context. "Hàm đăng nhập này dùng ở đâu, sửa logic JWT thành Refresh Token."</p>
+                        </div>
+                        <div class="glass-card" style="padding: 20px;">
+                            <h4 style="color: #c084fc;">Cursor Composer (Agent)</h4>
+                            <p>Tính năng mạnh nhất <kbd>Cmd/Ctrl + I</kbd>. Giao việc lớn (Ví dụ: "Tạo trang Dashboard phân tích doanh thu gồm Sidebar và Chart"). AI tự tạo File mới, cài thư viện, sửa file Router tự động đa cửa sổ.</p>
+                        </div>
+                        <div class="glass-card" style="padding: 20px;">
+                            <h4 style="color: #c084fc;">Smart Predictions / Tab Autocomplete</h4>
+                            <p>Không chỉ dự đoán 1 dòng như Copilot. Cursor dự đoán dòng code chỉnh sửa tiếp theo ở file khác và trên diện rộng với mô hình siêu nhanh (Cursor Tab). Ấn Tab để "Code faster than thought".</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="glass-card" style="text-align: center;">
+                    <h2>Vì sao Cursor vượt mặt Copilot/ChatGPT?</h2>
+                    <ul style="max-width: 600px; margin: 30px auto;">
+                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">Không Copy-Paste:</span> AI tự áp dụng Diff trực tiếp vào code.</li>
+                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">Context (Ngữ cảnh):</span> Hỏi ChatGPT "Sửa bug này" -> ChatGPT sẽ hỏi "Cung cấp code file kia đi". Cursor thì tự tìm file đó vì nó scan toàn bộ Workspace.</li>
+                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">Agentic Mode:</span> Bạn làm sếp, Cursor làm lính. Giao task, AI tự mở terminal chạy <code>npm install</code>, tự fix lỗi báo đỏ trong terminal.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- SLIDE 5: LÀM DEMO -->
+            <section>
+                <h2>Demo Trực Tiếp (Cursor)</h2>
+                <div class="glass-card" style="margin-top: 30px; padding: 50px;">
+                    <i class="fa-solid fa-desktop" style="font-size: 4rem; color: #94a3b8; margin-bottom: 20px;"></i>
+                    <p style="font-size: 1.5rem;">[ Live Demo: Use Composer to build a Web App from scratch in 3 minutes ]</p>
+                    <p><i>Kịch bản Demo gợi ý: Dùng Cmd+I tạo web quản lý Task có Data table, Search và Darkmode.</i></p>
+                </div>
+            </section>
+
+            <!-- SLIDE CUỐI -->
+            <section class="glass-card">
+                <h1>Q&A / Hỏi Đáp</h1>
+                <p>Cảm ơn các bạn đã lắng nghe!</p>
+                <div style="margin-top: 50px; display: flex; justify-content: center; gap: 30px;">
+                    <span class="badge ai">Website: cursor.com</span>
+                    <span class="badge ai">Thử ngay hôm nay</span>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>
