@@ -285,23 +285,73 @@
                 </section>
 
                 <section class="glass-card" style="text-align: left;">
-                    <h3 style="font-size: 2.2rem !important; margin-bottom: 30px !important;">Vòng đời phát triển sản phẩm thu gọn</h3>
-                    <p style="font-size: 1.3rem; margin-bottom: 20px;">Thời gian từ lúc lên Idea đến lúc đưa sản phẩm ra Production đã thay đổi chóng mặt:</p>
-                    <ul style="font-size: 1.3rem;">
-                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">2020: Thời gian tính bằng Tháng.</span> Lên plan, vẽ figma, code html css, ghép backend API, test lỗi...</li>
-                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">2023: Thời gian tính bằng Tuần.</span> Sinh mã bằng ChatGPT dạng snippet, ghép code thủ công, tự debug lỗi syntax.</li>
-                        <li><i class="fa-solid fa-check"></i> <span class="hl-green">2026: Thời gian tính bằng Giờ/Ngày.</span> Agent tự thiết kế DB, tự sinh UI, tự viết API, tự động build CI/CD.</li>
+                    <h3 style="font-size: 2.2rem !important; margin-bottom: 20px !important;">Sự Tiến Hoá của Công Cụ Lập Trình</h3>
+                    <p style="font-size: 1.3rem; margin-bottom: 20px;">Chúng ta đang đi đến cấp độ cuối cùng của tự động hoá lập trình:</p>
+                    <ul style="font-size: 1.2rem;">
+                        <li><b class="hl-blue">Gen 1 (IntelliSense):</b> Hiện gợi ý biến số, hàm có sẵn dựa trên thư viện dự án (Syntax).</li>
+                        <li><b class="hl-blue">Gen 2 (Snippet AI):</b> GitHub Copilot đời đầu, tiên đoán và tự hoàn thành dòng code tiếp theo (Line-completion).</li>
+                        <li><b class="hl-green">Gen 3 (Agentic / Composer):</b> AI chủ động tạo, sửa lỗi, và liên kết luồng logic trên nhiều file cùng lúc qua Chat & Xử lý (Cursor/Devin).</li>
+                        <li><b class="hl-purple">Gen 4 (AI Teams):</b> Viễn cảnh 2026+: Các Agent AI giao tiếp nội bộ để hoàn tất dự án độc lập, Developer chuyển sang vai trò "Đốc công".</li>
                     </ul>
                 </section>
 
                 <section class="glass-card" style="text-align: left;">
-                    <h3 style="font-size: 2.2rem !important;">Vậy AI tham gia vào những bước nào?</h3>
-                    <ul style="font-size: 1.3rem; margin-top: 20px;">
-                        <li><i class="fa-solid fa-wand-magic"></i> <span class="hl-blue">Phân tích yêu cầu Business:</span> AI tổng hợp tài liệu từ Idea, tự động tạo danh sách JIRA/Trello tickets.</li>
-                        <li><i class="fa-solid fa-wand-magic"></i> <span class="hl-blue">System Design & Code Gen:</span> Xây dựng kiến trúc MVC nguyên khối hoặc Microservices từ con số 0.</li>
-                        <li><i class="fa-solid fa-wand-magic"></i> <span class="hl-blue">Automated Testing QA:</span> Tự dự đoán các Edge-case của Form dữ liệu và Viết toàn bộ Unit Test.</li>
-                        <li><i class="fa-solid fa-wand-magic"></i> <span class="hl-blue">Deploy & Cloud:</span> Tự sinh Docker compose cho dự án phức tạp, cấu hình Nginx tự động.</li>
+                    <h3 style="font-size: 2.2rem !important; margin-bottom: 30px !important;">Vòng đời phát triển thu gọn đáng kể</h3>
+                    <p style="font-size: 1.3rem; margin-bottom: 20px;">Thời gian từ Ý tưởng (Idea) đến Triển khai (Production) thay đổi chóng mặt:</p>
+                    <ul style="font-size: 1.3rem;">
+                        <li><i class="fa-solid fa-clock"></i> <span class="hl-green">2020 (Đơn vị Tháng):</span> Xây Figma -> Cắt HTML/CSS -> Viết Back-end API -> Test -> Fix lỗi -> Deploy Server.</li>
+                        <li><i class="fa-solid fa-clock"></i> <span class="hl-green">2023 (Đơn vị Tuần):</span> Sinh mã tự động bằng ChatGPT, Developer ghép chúng tự do, dò sửa lỗi rò rỉ bộ nhớ. Có AI nhưng luồng ngắt quãng.</li>
+                        <li><i class="fa-solid fa-clock"></i> <span class="hl-green">2026 (Đơn vị Ngày/Giờ):</span> Coder Agent thiết kế DB, sinh UI qua Text-to-UI, viết API Endpoint, chạy Docker CI/CD liền mạch.</li>
                     </ul>
+                </section>
+
+                <section class="glass-card" style="text-align: left;">
+                    <h3 style="font-size: 2.2rem !important;">Hệ thống AI bấu chặt vào từng chốt chặn</h3>
+                    <ul style="font-size: 1.3rem; margin-top: 20px;">
+                        <li><i class="fa-solid fa-wand-magic"></i> <span class="hl-blue">Requirements Analysis:</span> Phân giải tài liệu Business thô, trích xuất Idea thẳng thành các task quản trị (Agile) trên Jira/Trello.</li>
+                        <li><i class="fa-solid fa-wand-magic"></i> <span class="hl-blue">System Architecture:</span> Đề xuất phân rã kiến trúc phức tạp (Monolithic vs Microservices) để đối ứng nghẽn cổ chai dự án.</li>
+                        <li><i class="fa-solid fa-wand-magic"></i> <span class="hl-blue">Automated QA Testing:</span> Quét Source-code, nhồi các edge-case lỗi ác tính và sinh Unit Test coverage đạt 90%.</li>
+                        <li><i class="fa-solid fa-wand-magic"></i> <span class="hl-blue">DevOps & Cloud:</span> Nhận thức lưu lượng mạng, thiết lập auto-scaling server và viết template Terraform ảo hoá.</li>
+                    </ul>
+                </section>
+
+                <section class="glass-card" style="text-align: left;">
+                    <h3 style="font-size: 2.2rem !important; margin-bottom: 20px !important;"><i class="fa-solid fa-chart-line"></i> Bài toán Kinh Tế & Hiệu Suất (ROI)</h3>
+                    <p style="font-size: 1.2rem;">Sử dụng Agentic Coding mang lại hiệu ứng đòn bẩy năng suất khổng lồ cho Doanh Nghiệp:</p>
+                    <ul style="font-size: 1.2rem; margin-top: 15px;">
+                        <li><i class="fa-solid fa-arrow-trend-down"></i> <b>Cắt giảm Chi phí Vận hành (R&D):</b> Team 3 Senior Devs vũ trang AI xử lý luồng việc bằng team 10 Devs truyền thống, tiêu thụ 50% technical debt.</li>
+                        <li><i class="fa-solid fa-stopwatch"></i> <b>Khai mở tốc độ On-Boarding nhân sự:</b> Lập trình viên mới không mất hàng tuần để đào sâu mã nguồn. Đưa Context cho AI và hỏi "Phân hệ giỏ hàng kết nối với DB qua model nào?" và chốt đáp án ngay.</li>
+                        <li><i class="fa-solid fa-bolt"></i> <b>Triệt tiêu hội chứng Cháy túi (Burn Out):</b> Tự động hoá công việc code Boilerplate lặp lại tẻ nhạt.</li>
+                    </ul>
+                </section>
+
+                <section class="glass-card" style="text-align: left;">
+                    <h3 style="font-size: 2rem !important; margin-bottom: 20px !important;"><i class="fa-solid fa-building"></i> Minh chứng thực tế: Cú sốc chuyển đổi số</h3>
+                    <p style="font-size: 1.2rem; margin-bottom: 15px;">"Coding via AI Agent" đang đan kết chặt chẽ vào dòng tiền lợi nhuận của thế giới giới ngay lúc này.</p>
+                    <ul style="font-size: 1.2rem;">
+                        <li><b>KLARNA AI SYSTEM:</b> Tập đoàn FinTech khổng lồ Klarna sử dụng AI Agent làm lượng công việc <span class="hl-green">tương đương 700 kỹ sư/supporter full-time</span>, giảm áp lực hệ thống và gia tăng thêm biên độ lợi nhuận ~40 triệu USD (ước tính 2024).</li>
+                        <li><b>GITHUB COPILOT REPORT:</b> Microsoft công bố báo cáo kiểm nghiệm, nhóm Kỹ sư có AI đạt tỷ lệ <span class="hl-blue">Merge Code chính xác cao hơn 25%</span> và độ tập trung dòng chảy tư duy (Flow State) hoàn toàn nguyên vẹn khi đập Bug.</li>
+                    </ul>
+                </section>
+
+                <section class="glass-card" style="text-align: left;">
+                    <h3 style="font-size: 2rem !important; margin-bottom: 20px !important;"><i class="fa-solid fa-triangle-exclamation"></i> Thử thách & Rủi ro (Quy tắc sinh tồn)</h3>
+                    <p style="font-size: 1.2rem;">Cuộc chơi Lập trình Tự Động cực kỳ "ảo mộng", buộc phải làm chủ được giới hạn rủi ro này:</p>
+                    <ul style="font-size: 1.2rem;">
+                        <li><i class="fa-solid fa-bug"></i> <b>AI Hallucination (Hội chứng Nhảm Ngữ):</b> Agent tự phát minh hàm số, chèn thư viện rác không tồn tại vào server... gây lỗi Crash ngầm ác độc. Buộc Dev phải Review Code với mắt đại bàng.</li>
+                        <li><i class="fa-solid fa-lock"></i> <b>Vi Phạm Sở Hữu Trí Tuệ (IP Privacy):</b> Chép mã nguồn tinh hoa của Công ty ném cho ChatGPT dạng mở sẽ biến bí mật kinh doanh thành Data Training. Luôn phải mua bản "Privacy/Enterprise Mode".</li>
+                        <li><i class="fa-solid fa-coins"></i> <b>Trần Giới hạn Dữ Liệu (Token Limits):</b> Ứng dụng khổng lồ 2 triệu dòng code gây nghẽn cổ chai nhận thức cho LLMs, chi phí trả tiền API vượt định mức ngân sách.</li>
+                    </ul>
+                </section>
+
+                <section class="glass-card">
+                    <h3 style="font-size: 2.2rem !important; margin-bottom: 20px !important;">Sự Định Tuyến lại Kỹ Năng cứng của Developer</h3>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <h4 style="color: #64748b; font-size: 1.4rem;">Gắn liền với việc nhớ "Cú Pháp Lệnh" (Memorizing Syntax Rules)</h4>
+                        <i class="fa-solid fa-arrow-down" style="font-size: 1.5rem; color: #124898; margin: 15px 0;"></i>
+                        <h4 style="font-size: 1.8rem;" class="hl-purple">Lấy cốt lõi ở việc phát triển "Tư duy Thiết Kế Hệ Thống" (Flow Blueprint)</h4>
+                        <p style="margin-top: 20px; font-size: 1.2rem;">Lập trình viên đỉnh cao không còn thi nhau gõ phím mù loà, mà phải trở thành một <span class="hl-green">Prompt Engineer Đại Tài</span>, nghệ thuật nằm ở việc chẻ nhỏ bài toán cực lớn thành các Micro-Task mệnh lệnh minh bạch cho Agent lao động thay mình.</p>
+                    </div>
                 </section>
             </section>
 
